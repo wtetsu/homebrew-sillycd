@@ -8,7 +8,8 @@ class Sillycd < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-s -w", "-trimpath", "-o", bin/"sillycd"
+    system "go", "build", "-o", bin/"sillycd"
+    # system "go", "build", "-s", "-w", "-trimpath", "-o", bin/"sillycd"
     # prefix.install_metafiles
     bin.install "bin/sillycd"
   end
