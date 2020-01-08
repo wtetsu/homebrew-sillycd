@@ -9,7 +9,8 @@ class Sillycd < Formula
 
   def install
     system "go", "build", "-s -w", "-trimpath", "-o", bin/"sillycd"
-    prefix.install_metafiles
+    # prefix.install_metafiles
+    bin.install "bin/sillycd"
   end
 
   test do
