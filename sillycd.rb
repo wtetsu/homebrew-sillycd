@@ -6,10 +6,9 @@ class Sillycd < Formula
       :revision => "9294377a976b43d7b8ae0c0b0010378f693b42a1"
 
   depends_on "go" => :build
-  depends_on "make" => :build
 
   def install
-    system "make"
+    system "go", "build", "-o", "dist/sillycd", "-v", "cmd/sillycd/main.go"
     bin.install "dist/sillycd"
   end
 
